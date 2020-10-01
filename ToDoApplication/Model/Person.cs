@@ -55,6 +55,11 @@ namespace ToDoApplication.Model
         {
             return $"\n\nFirstname: {firstname}\nLastname: {lastname}\n\n";
         }
+
+        public string Fullname ()
+        {
+            return $" {firstname} {lastname}"; 
+        }
     }
 
 }
