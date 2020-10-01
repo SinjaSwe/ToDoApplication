@@ -7,7 +7,7 @@ namespace ModelToDo.Tests
     public class ToDoTests
     {
         [Fact]
-        public void ToDoConstructor()
+        public void ToDoConstructor() // TEST OF CONSTRUCTOR
         {
             //Arrange
             string description = "Fix Car";
