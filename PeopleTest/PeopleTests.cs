@@ -55,20 +55,22 @@ namespace PeopleTests
         }
 
         [Fact]
-        public void FindByIDTest()
+        public void FindByIDTest() //Test to find if it finds the ID
         {
             //Arrange
             People people = new People();
             int personId = 1;
-            int nonExistantPerson = 2;
+            PersonSequencer.Reset();
+
+            people.AddNewPerson(personId, "Donald", "Duck");                     
 
             //Act
             Person result = people.FindById(personId);
 
             //Assert
+            Assert.Contains("Donald", result.PersonInformation()); 
+            Assert.Contains("Duck", result.PersonInformation()); 
             Assert.Contains(personId.ToString(), result.PersonInformation());
-            Assert.Contains(nonExistantPerson.ToString(), result.PersonInformation());
-
         }
 
         [Fact]
@@ -76,8 +78,11 @@ namespace PeopleTests
         {
             //Arrange
             People people = new People();
+            PersonSequencer.Reset(); 
             int size = 1;
+            int personId = 1;
 
+            people.AddNewPerson(personId, "Donald", "Duck");
 
             //Act
             int result = people.Size();

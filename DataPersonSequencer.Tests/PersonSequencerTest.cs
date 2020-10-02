@@ -16,25 +16,23 @@ namespace DataPersonSequencer.Tests
         public void TestIncreaseIdSequence()
         {
             //Arrange
-            int personId = 0;
-            int personIdIncreased = 1;
+            int expected = 1; // first person starts at 1;
 
             //Act
-            int newId = PersonSequencer.NextPersonId();
+            PersonSequencer.Reset();
+            int actual = PersonSequencer.NextPersonId();
 
             //Assert 
-            Assert.Equal(newId, personIdIncreased);
+            Assert.Equal(expected, actual);
         }
 
         [Fact] //Test if it resets to 0
 
         public void TestResetSequence()
         {
-            //Arrange
-            
-            int personId = 1;
+            //Arrange                       
             PersonSequencer.NextPersonId();
-            int personIdReset = 0;
+            int personIdReset = 1;
 
             //Act
 
