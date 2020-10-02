@@ -11,11 +11,20 @@ namespace ToDoApplication.Model
         string firstname;
         string lastname;
 
+        public int PersonId { get { return personId; } }
+
         //constructor
         public Person(string firstname, string lastname)
         {
             this.firstname = firstname;
             this.lastname = lastname;
+        }
+
+        public Person(int personId, string firstname, string lastname)
+        {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.personId = personId; 
         }
 
         public string Firstname
@@ -53,13 +62,10 @@ namespace ToDoApplication.Model
 
         public string PersonInformation()
         {
-            return $"\n\nFirstname: {firstname}\nLastname: {lastname}\n\n";
+            return $"Person ID: {personId}\n\nFirstname: {firstname}\nLastname: {lastname}\n\n";
         }
 
-        public string Fullname ()
-        {
-            return $" {firstname} {lastname}"; 
-        }
+        
     }
 
 }

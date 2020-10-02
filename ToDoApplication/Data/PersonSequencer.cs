@@ -5,25 +5,18 @@ using System.Text;
 namespace ToDoApplication.Data
 {
     public class PersonSequencer
-    {
-        //In PersonSequencer create a private static int variable called personId.
-        private static int personId;
-
-        //Add a static method called nextPersonId that increment and return the next personId value.
-
-        public static int nextPersonId(int personId)
+    {        
+        private static int personId; //In PersonSequencer create a private static int variable called personId.
+        
+        public static int NextPersonId() //Add a static method called nextPersonId that increment and return the next personId value.
         {
-            int nextId;
-            nextId = ++personId;
+            int nextId = ++personId;
             return nextId;
-        }
+        }       
 
-        //Add a static method called reset() that sets the personId variable to 0.
-
-        public static int reset(int personId)
+        public static void Reset() //Add a static method called reset() that sets the personId variable to 0.
         {
-            personId = 0;
-            return personId;
+            personId = 0; 
         }
     }
 

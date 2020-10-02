@@ -6,7 +6,8 @@ namespace DataPersonSequencer.Tests
 {
     public class PersonSequencerTest
     {
-        //Model
+        //[Fact]
+        //public void TestName()Model
         //Arrange
         //Act
         //Assert
@@ -19,7 +20,7 @@ namespace DataPersonSequencer.Tests
             int personIdIncreased = 1;
 
             //Act
-            int newId = PersonSequencer.nextPersonId(personId);
+            int newId = PersonSequencer.NextPersonId();
 
             //Assert 
             Assert.Equal(newId, personIdIncreased);
@@ -31,12 +32,14 @@ namespace DataPersonSequencer.Tests
         {
             //Arrange
             
-            int personId = 3;
+            int personId = 1;
+            PersonSequencer.NextPersonId();
             int personIdReset = 0;
 
             //Act
 
-            int resetId = PersonSequencer.reset(personId);
+            PersonSequencer.Reset();
+            int resetId = PersonSequencer.NextPersonId();
 
             //Assert
             Assert.Equal(personIdReset, resetId);
