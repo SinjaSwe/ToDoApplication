@@ -15,9 +15,10 @@ namespace ModelPerson.Tests
         {
             string firstname = "Jane";
             string lastname = "Doe";
+            int ID = 1;
 
             //Act
-            Person result = new Person(firstname, lastname);
+            Person result = new Person(ID, firstname, lastname);
 
             //Assert
             Assert.NotNull(result);
@@ -36,7 +37,8 @@ namespace ModelPerson.Tests
         {
             //Arrange
             string lastname = "Doe";
-            Person person = new Person(firstname, lastname);
+            int ID = 1; 
+            Person person = new Person(ID, firstname, lastname);
 
             //Act & Assert
             Assert.Throws<ArgumentException>(() => person.Firstname = firstname);
@@ -52,7 +54,8 @@ namespace ModelPerson.Tests
         {
             //Arrange
             string firstname = "Jane";
-            Person person = new Person(firstname, lastname);
+            int ID = 1;
+            Person person = new Person(ID, firstname, lastname);
 
             //Act & Assert
             Assert.Throws<ArgumentException>(() => person.Lastname = lastname);

@@ -7,19 +7,30 @@ namespace ToDoApplication.Model
     public class ToDo
     {
         //Requiredprivatefields
-        int toDoId;
+        readonly int toDoId;
         string description;
-        bool done = true;
+        bool done;
         Person assignee;
 
-        public int ToDoId { get { return toDoId; } }
+        public int TodoId { get { return toDoId; } }
+        public bool Done { get { return done; } }
+        public Person Assignee { get { return assignee; } }
 
-        // constructor
+        // constructor 
         public ToDo(int toDoId, string description)
         {
             this.toDoId = toDoId;
             this.description = description;
         }
+
+        // constructor to include done and assignee. 
+        public ToDo(int toDoId, string description, bool done, Person assignee)
+           : this(toDoId, description)
+        {
+            this.done = done;
+            this.assignee = assignee;
+        }
+
         public string Description
         {
             get { return description; }
@@ -39,7 +50,7 @@ namespace ToDoApplication.Model
 
         public string ToDoInformation()
         {
-            return $"ToDo id: {toDoId} \n\nDescription: {description}\n\n";
+            return $"ToDo id: {toDoId} \n\nDescription: {description}\n\nAssignee:{assignee}\n\nDone: {done}";
         }
     }
 }

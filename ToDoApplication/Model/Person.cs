@@ -7,24 +7,18 @@ namespace ToDoApplication.Model
     public class Person
     {
         //RequiredPrivateFields
-        int personId;
+        readonly int personId;
         string firstname;
         string lastname;
 
         public int PersonId { get { return personId; } }
 
         //constructor
-        public Person(string firstname, string lastname)
-        {
-            this.firstname = firstname;
-            this.lastname = lastname;
-        }
-
         public Person(int personId, string firstname, string lastname)
         {
+            this.personId = personId;
             this.firstname = firstname;
             this.lastname = lastname;
-            this.personId = personId; 
         }
 
         public string Firstname
