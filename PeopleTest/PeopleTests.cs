@@ -90,7 +90,30 @@ namespace PeopleTests
             Assert.Equal(size, result);
         }
 
-       
+        public void RemovePersonObjectTest()
+        {
+            //Arrange
+            People people = new People();
+            PersonSequencer.Reset();
+            int result = 1;
+            int personToRemove = 2;
+
+            Person Jane = people.AddNewPerson(1, "Jane", "Doe");
+            Person John = people.AddNewPerson(2, "John", "Doe");
+
+            //Act
+            people.RemovePersonObject(personToRemove);
+            int size = people.Size();
+            Person[] remaining = people.FindAll();
+
+            //Assert
+            Assert.Equal(result, size);
+            Assert.Contains(Jane, remaining);
+            Assert.DoesNotContain(John, remaining);
+
+        }
+
+
     }
 
 }

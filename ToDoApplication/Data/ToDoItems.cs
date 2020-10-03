@@ -137,5 +137,22 @@ namespace ToDoApplication.Data
             }
             return unasssignedArray;
         }
+
+        public void RemoveToDoObject(int toDoId) //Remove int a todo from array
+        {
+            for (int i = 0; i < arrayOfToDos.Length; i++)
+            {
+                if (arrayOfToDos[i].TodoId == toDoId)
+                {
+                    for (int a = i; a < arrayOfToDos.Length - 1; a++)
+                    {
+                        arrayOfToDos[a] = arrayOfToDos[a + 1];
+                    }                   
+
+                    Array.Resize(ref arrayOfToDos, arrayOfToDos.Length - 1);
+                }
+            }
+        }
     }
+
 }

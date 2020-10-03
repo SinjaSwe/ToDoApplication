@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using ToDoApplication.Data;
 using ToDoApplication.Model;
+using Xunit.Sdk;
 
 namespace ToDoItemsTests
 {
@@ -49,6 +50,23 @@ namespace ToDoItemsTests
         }
 
         [Fact]
+        public void FindAllTest()
+        {
+            //Arrange
+            TodoSequencer.ResetID();
+            ToDoItems toDo = new ToDoItems();
+            toDo.AddNewToDo(1, "Win the lotto");
+            toDo.AddNewToDo(2, "Learn to code");
+
+            //Act
+            ToDo[] result = toDo.FindAll();
+
+            //Assert
+            Assert.True(result.Length == 2);
+
+        }
+
+        [Fact]
         public void FindByIDTest() //Test to find if it finds the ID
         {
             //Arrange
@@ -86,12 +104,7 @@ namespace ToDoItemsTests
             //Assert
             Assert.Equal(size, result);
         }
-        //[Fact]
-        //public void TestName()
-        //{//Arrange
-        //Act
-        //Assert}
-
+        
         [Fact]
         public void FindByDoneStatusTest()
         {
@@ -212,5 +225,34 @@ namespace ToDoItemsTests
             Assert.Contains(itemNotDone1, result);
             Assert.DoesNotContain(item1, result);
         }
+
+       [Fact]
+        public void RemoveToDoObjectTest()
+        {
+            //Arrange
+            ToDoItems toDo = new ToDoItems();
+            TodoSequencer.ResetID();
+            int result = 1; 
+            int idToDoRemove = 2;
+
+            ToDo toDo1 = toDo.AddNewToDo(1, "Learn to code");
+            ToDo toDo2 = toDo.AddNewToDo(2, "Get a job");
+
+            //Act
+            toDo.RemoveToDoObject(idToDoRemove);
+            int size = toDo.Size();
+            ToDo[] remaining = toDo.FindAll();
+
+            //Assert
+            Assert.Equal(result, size);
+            Assert.Contains(toDo1, remaining);
+            Assert.DoesNotContain(toDo2, remaining);
+
+        }
+
+
+
     }
+
+
 }

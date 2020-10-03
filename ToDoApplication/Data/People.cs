@@ -51,7 +51,25 @@ namespace ToDoApplication.Data
             Array.Clear(arrayOfPersons, 0, arrayOfPersons.Length);
         }
 
-       
+        public void RemovePersonObject(int personId) //Remove int a person from array
+        {
+            for (int i = 0; i < arrayOfPersons.Length; i++)
+            {
+                if (arrayOfPersons[i].PersonId == personId)
+                {
+                    for (int a = i; a < arrayOfPersons.Length - 1; a++)
+                    {
+                        arrayOfPersons[a] = arrayOfPersons[a + 1];
+                    }
+
+                    Array.Resize(ref arrayOfPersons, arrayOfPersons.Length - 1);
+                }
+            }
+        }
+
+
+
+
 
     }
 }
