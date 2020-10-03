@@ -39,8 +39,7 @@ namespace PeopleTests
             string firstname = "Jane";
             string lastname = "Doe";
             int newPersonID = 1;
-            int personID = 0;
-
+        
             //Act            
             people.Clear();
             PersonSequencer.Reset();
@@ -91,17 +90,7 @@ namespace PeopleTests
             Assert.Equal(size, result);
         }
 
-        /*[Fact]
-        public void FindAllTest()
-        {
-            //Arrange
-            People people = new People();
-
-            //Act
-
-
-            //Assert
-        */
+       
     }
 
 }

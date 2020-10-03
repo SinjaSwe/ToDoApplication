@@ -12,19 +12,16 @@ namespace ToDoApplication.Data
 
         // Add a static method called nextToDoId that increment and return the next personId value
 
-        public static int NextToDo(int toDoID)
+        public static int NextToDo()
         {
-            int nextToDoId;
-            nextToDoId = ++toDoID;
+            int nextToDoId = ++toDoID;
             return nextToDoId;
         }
 
         //Return to zero
-        public static int ResetID(int toDoId)
+        public static void ResetID()
         {
-            toDoId = 0;
-            return 0;
-
+            toDoID = 0;
         }
     }
 }

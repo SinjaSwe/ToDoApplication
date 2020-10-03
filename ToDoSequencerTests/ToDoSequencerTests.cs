@@ -15,7 +15,7 @@ namespace ToDoSequencerTests
             int nextToDoID = 1;
 
             //Act
-            int newTdID = TodoSequencer.NextToDo(toDoId);
+            int newTdID = TodoSequencer.NextToDo();
 
             //Assert
             Assert.Equal(newTdID, nextToDoID);
@@ -26,15 +26,19 @@ namespace ToDoSequencerTests
         public void TestTdResetSequence()
         {
             //Arrange
-            int toDoId = 3;
-            int resetId = 0;
+            TodoSequencer.NextToDo();
+            int toDoTdReset = 1;
+
 
             //Act
-            int resetTdId = TodoSequencer.ResetID(toDoId);
+            TodoSequencer.ResetID(); 
+            int resetTdId = TodoSequencer.NextToDo();
 
             //Assert
-            Assert.Equal(resetId, resetTdId); 
+            Assert.Equal(resetTdId, toDoTdReset);
 
         }
+
+
 }
 }

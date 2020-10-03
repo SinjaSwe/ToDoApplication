@@ -12,6 +12,8 @@ namespace ToDoApplication.Model
         bool done = true;
         Person assignee;
 
+        public int ToDoId { get { return toDoId; } }
+
         // constructor
         public ToDo(int toDoId, string description)
         {

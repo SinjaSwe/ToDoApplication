@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoSequencerTests", "ToDoS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleTest", "PeopleTest\PeopleTest.csproj", "{85C33BEC-7B99-4D5A-B0C7-FD66C753B2A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoItemsTests", "ToDoItemsTests\ToDoItemsTests.csproj", "{E3376A82-9EE8-4B72-8A7D-AC990D52B2DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{85C33BEC-7B99-4D5A-B0C7-FD66C753B2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85C33BEC-7B99-4D5A-B0C7-FD66C753B2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85C33BEC-7B99-4D5A-B0C7-FD66C753B2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3376A82-9EE8-4B72-8A7D-AC990D52B2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3376A82-9EE8-4B72-8A7D-AC990D52B2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3376A82-9EE8-4B72-8A7D-AC990D52B2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3376A82-9EE8-4B72-8A7D-AC990D52B2DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
